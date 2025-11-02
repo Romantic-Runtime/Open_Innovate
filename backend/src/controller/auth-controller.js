@@ -16,7 +16,8 @@ export const googleLoginCallback = async (req, res) => {
             return res.redirect(`${process.env.FRONTEND_GOOGLE_CALLBACK_URL}?status=failure&error=no_workspace`);
         }
         
-        return res.redirect(`${process.env.FRONTEND_ORIGIN}/workspace/${workspace}`);
+        // Redirect to frontend callback with success status
+        return res.redirect(`${process.env.FRONTEND_GOOGLE_CALLBACK_URL}?status=success`);
     } catch (error) {
         console.error('Google login callback error:', error);
         return res.redirect(`${process.env.FRONTEND_GOOGLE_CALLBACK_URL}?status=failure&error=server_error`);
