@@ -1,0 +1,371 @@
+.landing-page {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  /* backdrop-filter: blur(10px); */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(127, 255, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo-open {
+  color: #ffffff;
+}
+
+.logo-innovate {
+  color: #7FFF00;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn-secondary {
+  padding: 0.7rem 1.8rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #7FFF00;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(127, 255, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  padding: 0.7rem 1.8rem;
+  background: #7FFF00;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #6FEF00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(127, 255, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  padding: 10rem 3rem 6rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #7FFF00;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary-large {
+  padding: 1rem 2.5rem;
+  background: #7FFF00;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-large:hover {
+  background: #6FEF00;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(127, 255, 0, 0.4);
+}
+
+.btn-secondary-large {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #7FFF00;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-large:hover {
+  background: rgba(127, 255, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Sections */
+.features-section,
+.how-it-works,
+.pricing-section {
+  padding: 5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(127, 255, 0, 0.1);
+  color: #7FFF00;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.highlight-text {
+  color: #7FFF00;
+  font-style: italic;
+}
+
+/* Feature Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(127, 255, 0, 0.05), rgba(0, 255, 127, 0.05));
+  border: 1px solid rgba(127, 255, 0, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #7FFF00;
+  box-shadow: 0 20px 40px rgba(127, 255, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  color: #7FFF00;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.step-card {
+  padding: 2rem;
+  background: rgba(127, 255, 0, 0.05);
+  border: 1px solid rgba(127, 255, 0, 0.2);
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  background: rgba(127, 255, 0, 0.08);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #7FFF00;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.step-card p {
+  color: #cccccc;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  padding: 2.5rem;
+  background: rgba(127, 255, 0, 0.05);
+  border: 1px solid rgba(127, 255, 0, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+  border: 2px solid #7FFF00;
+  transform: scale(1.05);
+  background: rgba(127, 255, 0, 0.08);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(127, 255, 0, 0.2);
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-description {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  min-height: 48px;
+}
+
+.price {
+  margin: 2rem 0;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #7FFF00;
+}
+
+.period {
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+.btn-primary-card {
+  width: 100%;
+  padding: 1rem;
+  background: #7FFF00;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-card:hover {
+  background: #6FEF00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(127, 255, 0, 0.3);
+}
+
+.features-list {
+  list-style: none;
+  text-align: left;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  color: #cccccc;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem;
+  border-top: 1px solid rgba(127, 255, 0, 0.2);
+  color: #888888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .features-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}
