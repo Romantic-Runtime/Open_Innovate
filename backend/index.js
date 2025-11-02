@@ -60,10 +60,19 @@ app.use(`${process.env.BASE_PATH}/matchmaking`,isAuthenticated,matchmakingRoutes
 
 app.use(errorHandler)
 
-app.listen(8000, async () => {
-    console.log('Server is running on port 8000')
-    await connectDB();
-})
+// Connect to database immediately for serverless
+connectDB();
+
+// Export for Vercel serverless function
+export default app;
+
+// Only start server if not in serverless environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(8000, async () => {
+        console.log('Server is running on port 8000')
+        await connectDB();
+    })
+}
 
 
 
