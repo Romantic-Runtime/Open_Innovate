@@ -2,6 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .rounded-4xl {
+    border-radius: 2rem;
+  }
+  .rotate-12 {
+    transform: rotate(12deg);
+  }
+  .rotate--12 {
+    transform: rotate(-12deg);
+  }
+  .rotate-168 {
+    transform: rotate(168deg);
+  }
+  .w-49\/50 {
+    width: 98%;
+  }
+  .h-1\/2 {
+    height: 50%;
+  }
+  .h-2\/3 {
+    height: 66.666667%;
+  }
+  .max-w-1\/2 {
+    max-width: 50%;
+  }
+  .max-w-49\/50 {
+    max-width: 98%;
+  }
+  .max-w-10\/11 {
+    max-width: 90.909091%;
+  }
+  .max-h-1\/2 {
+    max-height: 50%;
+  }
+  .max-h-49\/50 {
+    max-height: 98%;
+  }
+  .p-15 {
+    padding: 3.75rem;
+  }
+  .p-50 {
+    padding: 12.5rem;
+  }
+  .p-105 {
+    padding: 26.25rem;
+  }
+  .p-120 {
+    padding: 30rem;
+  }
+  .p-250 {
+    padding: 62.5rem;
+  }
+}
+
+/* Custom styles */
 * {
   margin: 0;
   padding: 0;
