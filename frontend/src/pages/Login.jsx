@@ -14,7 +14,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false)
 
   // Get the page user was trying to access before being redirected to login
-  const from = location.state?.from?.pathname || '/dashboard'
+  const from = '/dashboard'
 
   // If user is already logged in, redirect them away from login page
   useEffect(() => {
