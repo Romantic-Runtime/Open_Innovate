@@ -24,6 +24,7 @@ export const loginOrRegisterUser = async (
         let user = await User.findOne({ email }).session(session);
 
         if (!user) {
+            // Create new user
             user = new User({
                 name: displayName,
                 email,
@@ -64,7 +65,32 @@ export const loginOrRegisterUser = async (
             user.currentWorkspace = newWorkspace._id;
             await user.save({ session })
         } else {
-            throw new Error("User already exists. Please login instead.");
+            // User exists, just update their account tokens and profile picture
+            let account = await Account.findOne({ userId: user._id, provider }).session(session);
+            
+            if (!account) {
+                // Create account for this provider if it doesn't exist
+                account = new Account({
+                    userId: user._id,
+                    provider,
+                    providerId,
+                    accessToken,
+                    refreshToken: refreshToken || null,
+                    providerEmail: email
+                });
+                await account.save({ session });
+            } else {
+                // Update existing account tokens
+                account.accessToken = accessToken;
+                account.refreshToken = refreshToken || account.refreshToken;
+                await account.save({ session });
+            }
+            
+            // Update profile picture if provided
+            if (picture && !user.profilePicture) {
+                user.profilePicture = picture;
+                await user.save({ session });
+            }
         }
 
         await session.commitTransaction();
