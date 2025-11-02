@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const { login, loginWithGoogle } = useAuth()
+  const { user, login, loginWithGoogle } = useAuth()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -15,6 +15,13 @@ const Login = () => {
 
   // Get the page user was trying to access before being redirected to login
   const from = location.state?.from?.pathname || '/dashboard'
+
+  // If user is already logged in, redirect them away from login page
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true })
+    }
+  }, [user, navigate, from])
 
   const handleChange = (e) => {
     setFormData({
@@ -31,8 +38,7 @@ const Login = () => {
 
     try {
       await login(formData.email, formData.password)
-      // Redirect to the page they were trying to access, or dashboard
-      navigate(from, { replace: true })
+      // The useEffect above will handle the navigation once user is set
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.')
     } finally {
