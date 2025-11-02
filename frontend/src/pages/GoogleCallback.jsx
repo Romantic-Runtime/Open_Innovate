@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { authAPI } from '../services/api'
 
 const GoogleCallback = () => {
   const navigate = useNavigate()
@@ -12,15 +13,27 @@ const GoogleCallback = () => {
       const status = searchParams.get('status')
       
       if (status === 'failure') {
-        // Redirect to login with error message
-        navigate('/login?error=Google authentication failed')
+        const error = searchParams.get('error') || 'Google authentication failed'
+        navigate(`/login?error=${error}`)
         return
       }
 
-      // If success, check authentication and redirect to dashboard
+      // If success, fetch user data and redirect to their workspace
       try {
+        // Fetch current user data from backend
+        const response = await authAPI.getCurrentUser()
+        const user = response.data.user
+        
+        // Update auth context
         await checkAuth()
-        navigate('/dashboard')
+        
+        // Redirect to user's current workspace if they have one
+        if (user.currentWorkspace) {
+          navigate(`/workspace/${user.currentWorkspace}`)
+        } else {
+          // If no workspace, go to dashboard
+          navigate('/dashboard')
+        }
       } catch (error) {
         console.error('Auth check failed:', error)
         navigate('/login?error=Authentication failed')
