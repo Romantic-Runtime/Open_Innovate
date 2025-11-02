@@ -11,6 +11,7 @@ import Task from './Task.js';
 import Roles from './Roles.js';
 import Member from './Member.js';
 import Account from './Account.js';
+import ActivityLog from './ActivityLog.js';
 
 // Export all models as named exports
 export {
@@ -20,7 +21,8 @@ export {
     Task,
     Roles,
     Member,
-    Account
+    Account,
+    ActivityLog
 };
 
 // Default export with all models as an object
@@ -31,5 +33,6 @@ export default {
     Task,
     Roles,
     Member,
-    Account
+    Account,
+    ActivityLog
 };
