@@ -1,5 +1,20 @@
 # 🚀 Quick Start Guide - 3 Steps to Launch
 
+## Step 0: Update Repository (Optional)
+
+Before starting, ensure you have the latest code:
+```bash
+# Option 1: Quick pull
+git pull origin $(git branch --show-current)
+
+# Option 2: Use our automated script
+./pull-repo.sh
+```
+
+See `PULL_GUIDE.md` for more details on keeping your repository updated.
+
+---
+
 ## Step 1: Configure Backend (2 minutes)
 
 ```bash
