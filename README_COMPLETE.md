@@ -497,6 +497,42 @@ FRONTEND_ORIGIN=http://localhost:3000
 
 ---
 
+## 🔄 Keeping Your Repository Updated
+
+We've included tools to help you keep your repository up to date:
+
+### Quick Pull Command
+```bash
+# Pull latest changes for current branch
+git pull origin $(git branch --show-current)
+```
+
+### Automated Pull Script
+Use our helper script for a guided pull experience:
+```bash
+# Make it executable (first time only)
+chmod +x pull-repo.sh
+
+# Run the script
+./pull-repo.sh
+```
+
+The script will:
+- ✅ Check your current branch
+- ✅ Detect uncommitted changes
+- ✅ Fetch latest updates
+- ✅ Pull changes safely
+- ✅ Handle stashing if needed
+
+### Full Documentation
+See **`PULL_GUIDE.md`** for complete instructions on:
+- Pulling repository updates
+- Handling merge conflicts
+- Syncing with base branches
+- Best practices for git pulls
+
+---
+
 ## 🚀 Next Steps
 
 1. **Copy `.env.example` to `.env`** in backend folder
